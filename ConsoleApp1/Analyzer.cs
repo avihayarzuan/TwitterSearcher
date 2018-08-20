@@ -102,7 +102,7 @@ namespace TwittyWise
 
             System.IO.File.WriteAllLines(path + "MostUsedWords.txt", list);
             //Optional prints the data to screen:
-            list.ForEach(Console.WriteLine);
+            //list.ForEach(Console.WriteLine);
         }
     }
 }
