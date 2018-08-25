@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+using System.Configuration;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace TwittyWise
 {
@@ -13,8 +12,13 @@ namespace TwittyWise
         static void Main(string[] args)
         {
             // UserName and password to login to twitter
-            string userName = "TwittyWise";
-            string password = "654123";
+            string userName = "";
+            string password = "";
+            // You should put your password and user name in the AppConfig
+            // It should not go to git due to git ignore
+            userName = ConfigurationManager.AppSettings["UserName"];
+            password = ConfigurationManager.AppSettings["Password"];
+
             string loginUrl = "https://twitter.com/login";
             // URL of a twitter page to gain data from
             string trumpUrl = "https://twitter.com/realDonaldTrump";
